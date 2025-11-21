@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Class of 2025</title>
+    <style>
+        /* BASIC SETUP */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #1a1a1a; /* Dark Grey */
+            color: white;
+        }
+
+        /* THE LOCK SCREEN (Overlay) */
+        #lock-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Sits on top of everything */
+            text-align: center;
+        }
+
+        h1 { color: gold; font-size: 3rem; text-transform: uppercase; margin: 0 20px; }
+        
+        button {
+            padding: 20px 50px;
+            font-size: 20px;
+            background-color: gold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        button:active { background-color: orange; }
+
+        /* THE MAIN CONTENT (Hidden by default) */
+        #website-content {
+            display: none; /* Hidden until button is clicked */
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* CARDS AND IMAGES */
+        .photo-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .photo {
+            background: white;
+            color: black;
+            padding: 10px;
+            width: 200px;
+            transform: rotate(-2deg);
+        }
+        .photo:nth-child(even) { transform: rotate(2deg); }
+        .photo img { width: 100%; height: 150px; background: #ccc; object-fit: cover; }
+
+        .mystery-box {
+            border: 2px solid gold;
+            padding: 20px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            cursor: pointer;
+        }
+        .mystery-box:hover { background: gold; color: black; }
+        
+    </style>
+</head>
+<body>
+
+    <div id="lock-screen">
+        <h1>Class of 2025</h1>
+        <p>Farewell Surprise</p>
+        <button onclick="openWebsite()">CLICK TO OPEN</button>
+    </div>
+
+    <div id="website-content">
+        
+        <h2>To Our Seniors</h2>
+        <p>You will be missed!</p>
+        <br>
+
+        <h3>Memories</h3>
+        <div class="photo-wall">
+            <div class="photo">
+                <img src="https://via.placeholder.com/200" alt="img">
+                <p>First Day</p>
+            </div>
+            <div class="photo">
+                <img src="https://via.placeholder.com/200" alt="img">
+                <p>Last Trip</p>
+            </div>
+            <div class="photo">
+                <img src="https://via.placeholder.com/200" alt="img">
+                <p>Canteen</p>
+            </div>
+        </div>
+
+        <h3>Tap to Reveal Titles</h3>
+        <div>
+            <div class="mystery-box" onclick="alert('Rahul!')">Most Sleepy</div>
+            <div class="mystery-box" onclick="alert('Ananya!')">Future CEO</div>
+            <div class="mystery-box" onclick="alert('Rohan!')">Class Clown</div>
+        </div>
+
+        <br><br>
+        <p>From Class 11 (PCM Batch)</p>
+
+    </div>
+
+    <script>
+        function openWebsite() {
+            // 1. Hide the lock screen
+            document.getElementById('lock-screen').style.display = 'none';
+            
+            // 2. Show the main content
+            document.getElementById('website-content').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
